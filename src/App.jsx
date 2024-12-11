@@ -79,25 +79,30 @@ function App() {
 
   const currentTasks = tasks.filter(task => task.state === 'backlog' || task.state === 'in_progress');
   const currentTasksList = () => {
-    return currentTasks.map((task) => <li key={task.id}><p>{task.title} {task.state}</p><p>{task.priority}</p><p>{task.estimatedTime}</p></li>);
+    return currentTasks.map((task) => <li key={task.id}><p className='task-title'>{task.title} <span className='task-state'>{task.state}</span></p><p>Priority: {task.priority}</p><p>Est. time {task.estimatedTime}</p></li>);
   };
 
   const completedTasks = tasks.filter(task => task.state === 'completed');
   const completedTasksList = () => {
-    return completedTasks.map((task) => <li key={task.id}><p>{task.title} {task.state}</p><p>{task.priority}</p><p>{task.estimatedTime}</p></li>);
+    return completedTasks.map((task) => <li key={task.id}><p className='task-title'>{task.title} <span className='task-state'>{task.state}</span></p><p>Priority: {task.priority}</p><p>Est. time {task.estimatedTime}</p></li>);
   };
- 
+
   return (
     <>
-    <h1>Task Manager</h1>
-    <p>Current Tasks ({currentTasks.lenght})</p>
-    <ul>
-      {currentTasksList()}
-    </ul>
-    <p>Completed Tasks ({completedTasks.lenght})</p>
-    <ul>
-    {completedTasksList()}
-    </ul>
+      <div className='pagina-tasks'>
+        <p className='title'>Task Manager</p>
+        <div className='tasks'>
+          <p className='cur-compl-tasks'>Current Tasks ({currentTasksList().length})</p>
+          <ul className='list'>
+            {currentTasksList()}
+          </ul>
+          <div className='separatore'></div>
+          <p className='cur-compl-tasks'>Completed Tasks ({completedTasksList().length})</p>
+          <ul className='list'>
+            {completedTasksList()}
+          </ul>
+        </div>
+      </div>
     </>
   )
 }

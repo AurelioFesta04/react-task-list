@@ -1,0 +1,53 @@
+.pagina-tasks {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.title {
+  margin: 0;
+  padding: 1.5rem;
+  font-size: 2rem;
+  font-weight: bold;
+  background-color: blanchedalmond;
+}
+
+.tasks {
+  padding: 1.5rem;
+}
+
+.cur-compl-tasks {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 3rem;
+}
+
+.task-title {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.task-state {
+  padding: 8px;
+  background-color: green;
+  color: white;
+  font-size: small;
+}
+
+.list {
+  list-style: none;
+  line-height: 1rem;
+  margin-left: -2.5rem;
+}
+
+li {
+  margin-bottom: 2rem;
+}
+
+.separatore {
+  width: 100%;
+  height: 1px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  background-color: gray;
+}
