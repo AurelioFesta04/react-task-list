@@ -1,8 +1,4 @@
-import { useState } from 'react'
-import './App.css'
-
 function App() {
-  const [count, setCount] = useState(0)
 
   const tasks = [
     {
@@ -79,12 +75,12 @@ function App() {
 
   const currentTasks = tasks.filter(task => task.state === 'backlog' || task.state === 'in_progress');
   const currentTasksList = () => {
-    return currentTasks.map((task) => <li key={task.id}><p className='task-title'>{task.title} <span className='task-state'>{task.state}</span></p><p>Priority: {task.priority}</p><p>Est. time {task.estimatedTime}</p></li>);
+    return currentTasks.map((task) => <li key={task.id}><p className='task-title'>{task.title} <span className={`task-state ${task.state}`}>{task.state}</span></p><p>Priority: {task.priority}</p><p>Est. time {task.estimatedTime}</p></li>);
   };
 
   const completedTasks = tasks.filter(task => task.state === 'completed');
   const completedTasksList = () => {
-    return completedTasks.map((task) => <li key={task.id}><p className='task-title'>{task.title} <span className='task-state'>{task.state}</span></p><p>Priority: {task.priority}</p><p>Est. time {task.estimatedTime}</p></li>);
+    return completedTasks.map((task) => <li key={task.id}><p className='task-title'>{task.title} <span className={`task-state ${task.state}`}>{task.state}</span></p><p>Priority: {task.priority}</p><p>Est. time {task.estimatedTime}</p></li>);
   };
 
   return (
